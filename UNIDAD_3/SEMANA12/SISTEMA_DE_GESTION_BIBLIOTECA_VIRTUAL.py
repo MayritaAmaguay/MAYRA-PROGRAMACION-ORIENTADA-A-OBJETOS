@@ -98,6 +98,48 @@ class Biblioteca:
         if resultados:
             print("\n🔍 Libros encontrados:")
             for libro in resultados:
+
+
+                # =========================
+                # 🚀 PRUEBAS DEL SISTEMA
+                # =========================
+
+                # Crear libros
+                libro1 = Libro("Cien años de soledad", "Gabriel García Márquez", "Ficción", "123456")
+                libro2 = Libro("El principito", "Antoine de Saint-Exupéry", "Infantil", "234567")
+                libro3 = Libro("1984", "George Orwell", "Distopía", "345678")
+
+                # Crear usuarios
+                usuario1 = Usuario("Mayra", "U001")
+                usuario2 = Usuario("Luciana", "U002")
+
+                # Crear biblioteca
+                biblioteca = Biblioteca()
+
+                # Agregar libros
+                biblioteca.agregar_libro(libro1)
+                biblioteca.agregar_libro(libro2)
+                biblioteca.agregar_libro(libro3)
+
+                # Registrar usuarios
+                biblioteca.registrar_usuario(usuario1)
+                biblioteca.registrar_usuario(usuario2)
+
+                # Prestar libros
+                biblioteca.prestar_libro("123456", "U001")
+                biblioteca.prestar_libro("234567", "U002")
+
+                # Listar libros prestados
+                biblioteca.listar_libros_prestados()
+
+                # Buscar un libro
+                biblioteca.buscar_libro("Orwell")
+
+                # Devolver libros
+                biblioteca.devolver_libro("123456", "U001")
+
+                # Listar libros después de la devolución
+                biblioteca.listar_libros_prestados()
                 print(f"📖 {libro}")
         else:
             print("⚠️ No se encontraron libros con ese término.")
@@ -109,45 +151,3 @@ class Biblioteca:
                 print(f"\n👤 {usuario.nombre} ({usuario.id_usuario}):")
                 print(usuario.listar_libros_prestados())
         print("✅ Fin de la lista.")
-
-
-# =========================
-# 🚀 PRUEBAS DEL SISTEMA
-# =========================
-
-# Crear libros
-libro1 = Libro("Cien años de soledad", "Gabriel García Márquez", "Ficción", "123456")
-libro2 = Libro("El principito", "Antoine de Saint-Exupéry", "Infantil", "234567")
-libro3 = Libro("1984", "George Orwell", "Distopía", "345678")
-
-# Crear usuarios
-usuario1 = Usuario("Mayra", "U001")
-usuario2 = Usuario("Luciana", "U002")
-
-# Crear biblioteca
-biblioteca = Biblioteca()
-
-# Agregar libros
-biblioteca.agregar_libro(libro1)
-biblioteca.agregar_libro(libro2)
-biblioteca.agregar_libro(libro3)
-
-# Registrar usuarios
-biblioteca.registrar_usuario(usuario1)
-biblioteca.registrar_usuario(usuario2)
-
-# Prestar libros
-biblioteca.prestar_libro("123456", "U001")
-biblioteca.prestar_libro("234567", "U002")
-
-# Listar libros prestados
-biblioteca.listar_libros_prestados()
-
-# Buscar un libro
-biblioteca.buscar_libro("Orwell")
-
-# Devolver libros
-biblioteca.devolver_libro("123456", "U001")
-
-# Listar libros después de la devolución
-biblioteca.listar_libros_prestados()
